@@ -1,8 +1,13 @@
 {
 	"name": "@codelytv/mcp-test-client",
-	"version": "1.0.0",
+	"version": "0.1.0",
 	"description": "A TypeScript test client for Model Context Protocol (MCP) servers",
-	"keywords": ["mcp", "model-context-protocol", "testing", "typescript"],
+	"keywords": [
+		"mcp",
+		"model-context-protocol",
+		"testing",
+		"typescript"
+	],
 	"scripts": {
 		"build": "tsc",
 		"lint": "eslint src eslint.config.mjs",
