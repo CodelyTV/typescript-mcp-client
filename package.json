@@ -16,6 +16,33 @@
 	},
 	"main": "dist/src/index.js",
 	"types": "dist/src/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/src/index.js",
+			"require": "./dist/src/index.js",
+			"types": "./dist/src/index.d.ts"
+		},
+		"./prompts": {
+			"import": "./dist/src/prompts/index.js",
+			"require": "./dist/src/prompts/index.js",
+			"types": "./dist/src/prompts/index.d.ts"
+		},
+		"./resource-templates": {
+			"import": "./dist/src/resource-templates/index.js",
+			"require": "./dist/src/resource-templates/index.js",
+			"types": "./dist/src/resource-templates/index.d.ts"
+		},
+		"./resources": {
+			"import": "./dist/src/resources/index.js",
+			"require": "./dist/src/resources/index.js",
+			"types": "./dist/src/resources/index.d.ts"
+		},
+		"./tools": {
+			"import": "./dist/src/tools/index.js",
+			"require": "./dist/src/tools/index.js",
+			"types": "./dist/src/tools/index.d.ts"
+		}
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/CodelyTV/typescript-mcp-test-client"
