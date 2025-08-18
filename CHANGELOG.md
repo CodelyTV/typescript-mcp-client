@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/CodelyTV/typescript-mcp-test-client/compare/v0.4.0...v0.5.0) (2025-08-18)
+
+
+### Features
+
+* export in one level ([c37fe6f](https://github.com/CodelyTV/typescript-mcp-test-client/commit/c37fe6ff8c1c81fc9e9c734dbe8793695e4cbda2))
+
 ## [0.4.0](https://github.com/CodelyTV/typescript-mcp-test-client/compare/v0.3.0...v0.4.0) (2025-08-18)
 
 
