@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/CodelyTV/typescript-mcp-test-client/compare/v0.3.0...v0.4.0) (2025-08-18)
+
+
+### Features
+
+* disable provenance while the repo is private ([42f75a7](https://github.com/CodelyTV/typescript-mcp-test-client/commit/42f75a7ed8aab71725f620d056a6a02f5b0125a8))
+
 ## [0.3.0](https://github.com/CodelyTV/typescript-mcp-test-client/compare/v0.2.0...v0.3.0) (2025-08-18)
 
 
