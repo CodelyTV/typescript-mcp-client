@@ -71,4 +71,4 @@ The main client class for interacting with MCP servers.
 
 ## License
 
-MIT
+See [LICENSE](LICENSE)
