@@ -1,16 +1,16 @@
 import { Primitives } from "@codelytv/primitives-type";
 
-export class McpTestPromptMessage {
+export class McpPromptMessage {
 	constructor(
 		public readonly role: "user" | "assistant",
 		public readonly content: { type: string; text: string },
 	) {}
 
-	static fromPrimitives(message: Primitives<McpTestPromptMessage>): McpTestPromptMessage {
-		return new McpTestPromptMessage(message.role, message.content);
+	static fromPrimitives(message: Primitives<McpPromptMessage>): McpPromptMessage {
+		return new McpPromptMessage(message.role, message.content);
 	}
 
-	toPrimitives(): Primitives<McpTestPromptMessage> {
+	toPrimitives(): Primitives<McpPromptMessage> {
 		return {
 			role: this.role,
 			content: this.content,

@@ -1,5 +1,5 @@
 {
-	"name": "@codelytv/mcp-test-client",
+	"name": "@codelytv/mcp-client",
 	"version": "0.4.0",
 	"description": "A TypeScript test client for Model Context Protocol (MCP) servers",
 	"keywords": [
@@ -18,14 +18,14 @@
 	"types": "dist/src/index.d.ts",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/CodelyTV/typescript-mcp-test-client"
+		"url": "git+https://github.com/CodelyTV/typescript-mcp-client"
 	},
 	"author": "codelytv",
 	"license": "GPL-3.0",
 	"bugs": {
-		"url": "https://github.com/CodelyTV/typescript-mcp-test-client/issues"
+		"url": "https://github.com/CodelyTV/typescript-mcp-client/issues"
 	},
-	"homepage": "https://github.com/CodelyTV/typescript-mcp-test-client#readme",
+	"homepage": "https://github.com/CodelyTV/typescript-mcp-client#readme",
 	"dependencies": {
 		"@codelytv/primitives-type": "^3.1.0",
 		"@modelcontextprotocol/sdk": "^1.17.2"

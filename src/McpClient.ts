@@ -5,15 +5,15 @@ import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio";
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp";
 import { Transport } from "@modelcontextprotocol/sdk/shared/transport";
 
-import { McpTestPromptGetResponse } from "./prompts/McpTestPromptGetResponse";
-import { McpTestPromptsListResponse } from "./prompts/McpTestPromptsListResponse";
-import { McpTestResourceTemplatesListResponse } from "./resource-templates/McpTestResourceTemplatesListResponse";
-import { McpTestResourcesListResponse } from "./resources/McpTestResourcesListResponse";
-import { McpTestResourcesReadResponse } from "./resources/McpTestResourcesReadResponse";
-import { McpTestToolCallResponse } from "./tools/McpTestToolCallResponse";
-import { McpTestToolsListResponse } from "./tools/McpTestToolsListResponse";
+import { McpPromptGetResponse } from "./prompts/McpPromptGetResponse";
+import { McpPromptsListResponse } from "./prompts/McpPromptsListResponse";
+import { McpResourceTemplatesListResponse } from "./resource-templates/McpResourceTemplatesListResponse";
+import { McpResourcesListResponse } from "./resources/McpResourcesListResponse";
+import { McpResourcesReadResponse } from "./resources/McpResourcesReadResponse";
+import { McpToolCallResponse } from "./tools/McpToolCallResponse";
+import { McpToolsListResponse } from "./tools/McpToolsListResponse";
 
-export class McpTestClient {
+export class McpClient {
 	private readonly client: Client;
 	private readonly transport: Transport;
 
@@ -23,7 +23,7 @@ export class McpTestClient {
 	) {
 		this.client = new Client(
 			{
-				name: "mcp-test-client",
+				name: "mcp-client",
 				version: "1.0.0",
 			},
 			{
@@ -53,27 +53,25 @@ export class McpTestClient {
 		await this.client.close();
 	}
 
-	async listTools(): Promise<McpTestToolsListResponse> {
+	async listTools(): Promise<McpToolsListResponse> {
 		const response = await this.client.listTools();
 
-		return McpTestToolsListResponse.fromPrimitives(
-			response as Primitives<McpTestToolsListResponse>,
-		);
+		return McpToolsListResponse.fromPrimitives(response as Primitives<McpToolsListResponse>);
 	}
 
-	async listResources(): Promise<McpTestResourcesListResponse> {
+	async listResources(): Promise<McpResourcesListResponse> {
 		const response = await this.client.listResources();
 
-		return McpTestResourcesListResponse.fromPrimitives(
-			response as Primitives<McpTestResourcesListResponse>,
+		return McpResourcesListResponse.fromPrimitives(
+			response as Primitives<McpResourcesListResponse>,
 		);
 	}
 
-	async listResourceTemplates(): Promise<McpTestResourceTemplatesListResponse> {
+	async listResourceTemplates(): Promise<McpResourceTemplatesListResponse> {
 		const response = await this.client.listResourceTemplates();
 
-		return McpTestResourceTemplatesListResponse.fromPrimitives(
-			response as Primitives<McpTestResourceTemplatesListResponse>,
+		return McpResourceTemplatesListResponse.fromPrimitives(
+			response as Primitives<McpResourceTemplatesListResponse>,
 		);
 	}
 
@@ -96,30 +94,27 @@ export class McpTestClient {
 		return response.completion.values;
 	}
 
-	async readResource(uri: string): Promise<McpTestResourcesReadResponse> {
+	async readResource(uri: string): Promise<McpResourcesReadResponse> {
 		const response = await this.client.readResource({ uri });
 
-		return McpTestResourcesReadResponse.fromPrimitives(
-			response as Primitives<McpTestResourcesReadResponse>,
+		return McpResourcesReadResponse.fromPrimitives(
+			response as Primitives<McpResourcesReadResponse>,
 		);
 	}
 
-	async callTool(
-		name: string,
-		args: Record<string, unknown> = {},
-	): Promise<McpTestToolCallResponse> {
+	async callTool(name: string, args: Record<string, unknown> = {}): Promise<McpToolCallResponse> {
 		const response = await this.client.callTool({
 			name,
 			arguments: args,
 		});
 
-		return McpTestToolCallResponse.fromPrimitives(response as Primitives<McpTestToolCallResponse>);
+		return McpToolCallResponse.fromPrimitives(response as Primitives<McpToolCallResponse>);
 	}
 
-	async listPrompts(): Promise<McpTestPromptsListResponse> {
+	async listPrompts(): Promise<McpPromptsListResponse> {
 		const response = await this.client.listPrompts();
 
-		return McpTestPromptsListResponse.fromPrimitives({
+		return McpPromptsListResponse.fromPrimitives({
 			prompts: response.prompts.map((prompt: any) => ({
 				name: prompt.name,
 				title: prompt.title ?? "",
@@ -129,10 +124,7 @@ export class McpTestClient {
 		});
 	}
 
-	async getPrompt(
-		name: string,
-		args: Record<string, unknown> = {},
-	): Promise<McpTestPromptGetResponse> {
+	async getPrompt(name: string, args: Record<string, unknown> = {}): Promise<McpPromptGetResponse> {
 		const response = await this.client.getPrompt({
 			name,
 			arguments: Object.fromEntries(
@@ -140,7 +132,7 @@ export class McpTestClient {
 			),
 		});
 
-		return McpTestPromptGetResponse.fromPrimitives({
+		return McpPromptGetResponse.fromPrimitives({
 			messages: response.messages.map((message: any) => ({
 				role: message.role,
 				content:
