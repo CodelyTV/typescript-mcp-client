@@ -1,11 +1,11 @@
-# @codelytv/mcp-test-client
+# @codelytv/mcp-client
 
 A TypeScript test client for Model Context Protocol (MCP) servers that provides a convenient way to test MCP functionality in your test suites.
 
 ## Installation
 
 ```bash
-npm install --save-dev @codelytv/mcp-test-client
+npm install --save-dev @codelytv/mcp-client
 ```
 
 ## Usage
@@ -13,9 +13,9 @@ npm install --save-dev @codelytv/mcp-test-client
 ### Basic Example
 
 ```typescript
-import { McpTestClient } from '@codelytv/mcp-test-client';
+import { McpClient } from '@codelytv/mcp-client';
 
-const mcpClient = new McpTestClient("stdio", [
+const mcpClient = new McpClient("stdio", [
   "npx",
   "ts-node",
   "./src/app/mcp/server.ts",
@@ -43,18 +43,18 @@ await mcpClient.disconnect();
 ### HTTP Transport
 
 ```typescript
-const mcpClient = new McpTestClient("http", ["http://localhost:3000/mcp"]);
+const mcpClient = new McpClient("http", ["http://localhost:3000/mcp"]);
 ```
 
 ## API
 
-### McpTestClient
+### McpClient
 
 The main client class for interacting with MCP servers.
 
 #### Constructor
 
-- `new McpTestClient(transport: "stdio" | "http", args: string[])`
+- `new McpClient(transport: "stdio" | "http", args: string[])`
 
 #### Methods
 
