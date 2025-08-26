@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.0](https://github.com/CodelyTV/typescript-mcp-client/compare/v0.6.0...v0.7.0) (2025-08-26)
+
+
+### Features
+
+* rename to mcp-client ([#8](https://github.com/CodelyTV/typescript-mcp-client/issues/8)) ([dd8753b](https://github.com/CodelyTV/typescript-mcp-client/commit/dd8753be4afa37cfd15152c520d731e142cb62f0))
+
 ## [0.6.0](https://github.com/CodelyTV/typescript-mcp-client/compare/v0.5.0...v0.6.0) (2025-08-26)
 
 
