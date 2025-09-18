@@ -22,15 +22,15 @@
 </p>
 
 
-## Installation
+# ⬇️ Installation
 
 ```bash
 npm install --save-dev @codelytv/mcp-client
 ```
 
-## Usage
+# 💻 Usage
 
-### Basic Example
+## Basic Example
 
 ```typescript
 import { McpClient } from '@codelytv/mcp-client';
@@ -60,23 +60,23 @@ const resource = await mcpClient.readResource('courses://all');
 await mcpClient.disconnect();
 ```
 
-### HTTP Transport
+## HTTP Transport
 
 ```typescript
 const mcpClient = new McpClient("http", ["http://localhost:3000/mcp"]);
 ```
 
-## API
+# 🔡 API
 
-### McpClient
+## McpClient
 
 The main client class for interacting with MCP servers.
 
-#### Constructor
+### Constructor
 
 - `new McpClient(transport: "stdio" | "http", args: string[])`
 
-#### Methods
+### Methods
 
 - `connect()` - Connect to the MCP server
 - `disconnect()` - Disconnect from the MCP server
@@ -89,7 +89,7 @@ The main client class for interacting with MCP servers.
 - `listPrompts()` - List available prompts
 - `getPrompt(name: string, args?: Record<string, unknown>)` - Get a prompt
 
-## Codely Code Quality Standards
+# 👌 Codely Code Quality Standards
 
 Publishing this package we are committing ourselves to the following code quality standards:
 
@@ -100,6 +100,6 @@ Publishing this package we are committing ourselves to the following code qualit
 - 📖 **Well documented ReadMe** showing how to install and use
 - ⚖️ **License favoring Open Source** and collaboration
 
-## License
+# ⚖️ License
 
 See [LICENSE](LICENSE)
